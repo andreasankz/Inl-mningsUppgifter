@@ -46,7 +46,7 @@ namespace InlämningsUppgift1_WorkerService
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                 int rTemperatur = _tempData.Temperatur;
+                int rTemperatur = _tempData.Temperatur;
 
                 if (rTemperatur >= 25)
                     _logger.LogInformation($"The temperatur is {rTemperatur} and its to high!");

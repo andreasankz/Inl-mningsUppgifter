@@ -39,5 +39,20 @@ namespace InlämningsUppgift2_WPF
             DataContext = new ContactsModel();
 
         }
+
+        private void btnCalender_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new CalenderModel();
+        }
+
+        private void btnTasks_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new TaskModel();
+        }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new SettingsModel();
+        }
     }
 }

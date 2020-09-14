@@ -4,32 +4,58 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:InlämningsUppgift2_WPF.Views"
+             xmlns:Controlls="clr-namespace:InlämningsUppgift2_WPF.Controlls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid >
+             d:DesignHeight="720" d:DesignWidth="940">
+    
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="400"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0" Background="#FFC6DEEE" >
-
             <StackPanel>
-                <TextBox Text="Messages" FontFamily="Arial Narrow" FontSize="26" FontWeight="Bold" Background="Transparent" BorderThickness="0" Margin="30,40,0,0"  />
-                
-
-
-
+                <TextBox Text="Messages" FontFamily="Microsoft Sans Serif" FontSize="28" FontWeight="Bold" Background="Transparent" BorderThickness="0" Margin="25,50,0,0"  />
+                <Controlls:MessagesControll Margin="0,45,0,0" MessagesDate="2020-09-03" MessagesTime="14:30" />
+                <Controlls:MessagesControll MessagesDate="2020-09-01" MessagesTime="12:08"/>
+                <Controlls:MessagesControll MessagesDate="2020-08-29" MessagesTime="11:08"/>
+                <Controlls:MessagesControll MessagesDate="2020-08-28" MessagesTime="14:35"/>
+                <Controlls:MessagesControll MessagesDate="2020-08-25" MessagesTime="07:15"/>
+                <Controlls:MessagesControll MessagesDate="2020-08-23" MessagesTime="20:40"/>
+                <Controlls:MessagesControll MessagesDate="2020-08-19" MessagesTime="14:38"/>
+                <Controlls:MessagesControll MessagesDate="2020-08-18" MessagesTime="10:00"/>
             </StackPanel>
-            
-            
         </Grid>
-
-        <Grid Grid.Column="1" Background="#FFF1F6F6">
-            
-            
+        <Grid Grid.Column="1" Background="#FFF0F0F0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Ellipse Height="75"  Width="75" Stroke="Transparent" HorizontalAlignment="Left" Margin="40,10,0,0" Fill="#FFC6DEEE"/>
+                    <StackPanel Grid.Row="1" Grid.Column="1">
+                        <TextBox Text="From Contact Name"  FontFamily="Bahnschrift SemiBold" FontSize="20" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="0,60,0,0" />
+                        <TextBox Text="To Firstname LastName" FontFamily="Candara Light" FontSize="12" Background="Transparent" BorderThickness="0"  />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel>
+                    <TextBox Text="Hej där," FontFamily="Arial" Background="Transparent"  BorderThickness="0" Margin="40,0,0,0"/>
+                    <TextBox Text="Här är ett litet meddelande som kan vara vad som helst. Det står inget speciellt i detta" FontFamily="Arial" Background="Transparent"  BorderThickness="0" Margin="40,0,0,0"/>
+                    <TextBox Text="meddelande utan detta är bara för att fylla ut detta utrymme." FontFamily="Arial" Background="Transparent"  BorderThickness="0" Margin="40,0,0,0"/>
+                    <TextBox Text="Vi hörs vidare och ser hur vi kan lösa det." FontFamily="Arial" Background="Transparent"  BorderThickness="0" Margin="40,0,0,0"/>
+                    <TextBox Text="Trevlig dag!" FontFamily="Arial" Background="Transparent"  BorderThickness="0" Margin="40,15,0,0"/>
+                    <TextBox Text="Med vänliga hälsningar" FontFamily="Arial" Background="Transparent"  BorderThickness="0" Margin="40,15,0,0" Foreground="#FF6E6E6E" FontStyle="Italic" />
+                    <TextBox Text="Contact Name" FontFamily="Arial" Background="Transparent"  BorderThickness="0" Margin="40,0,0,0" Foreground="#FF6E6E6E" FontStyle="Italic" />
+                </StackPanel>
+            </Grid>
         </Grid>
-        
-            
     </Grid>
 </UserControl>

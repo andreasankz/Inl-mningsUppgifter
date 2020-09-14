@@ -1,5 +1,4 @@
-﻿using InlämningsUppgift2_WPF.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -15,15 +14,13 @@ using System.Windows.Shapes;
 namespace InlämningsUppgift2_WPF.Views
 {
     /// <summary>
-    /// Interaction logic for MessagesViewModel.xaml
+    /// Interaction logic for CalenderViewModel.xaml
     /// </summary>
-    public partial class MessagesViewModel : UserControl
+    public partial class CalenderViewModel : UserControl
     {
-        public MessagesViewModel()
+        public CalenderViewModel()
         {
             InitializeComponent();
         }
-
-       
     }
 }

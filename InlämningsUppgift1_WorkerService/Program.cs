@@ -17,7 +17,7 @@ namespace InlämningsUppgift1_WorkerService
             .MinimumLevel.Debug()
             .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
             .Enrich.FromLogContext()
-            .WriteTo.Console()
+            .WriteTo.File(@"D:\tempworkerservice\log\LogFile.txt")
             .CreateLogger();
 
             try

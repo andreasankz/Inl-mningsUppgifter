@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 
 namespace InlämningsUppgift1_WorkerService.Models
@@ -10,6 +11,9 @@ namespace InlämningsUppgift1_WorkerService.Models
 
         
         
+        
+        
+
         private int TempRandom()
         {
             Random tempSlump = new Random();

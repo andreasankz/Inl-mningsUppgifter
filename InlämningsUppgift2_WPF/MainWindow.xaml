@@ -18,6 +18,15 @@
         <DataTemplate x:Name="ContactsViewTemplate" DataType="{x:Type models:ContactsModel}">
             <views:ContactsViewModel DataContext="{Binding}"/>
         </DataTemplate>
+        <DataTemplate x:Name="CalenderViewTemplate" DataType="{x:Type models:CalenderModel}">
+            <views:CalenderViewModel DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="TaskViewTemplate" DataType="{x:Type models:TaskModel}">
+            <views:TaskViewModel DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="SettingsViewTemplate" DataType="{x:Type models:SettingsModel}">
+            <views:SettingsViewModel DataContext="{Binding}"/>
+        </DataTemplate>
     </Window.Resources>
 
     <Grid>
@@ -25,6 +34,7 @@
             <ColumnDefinition Width="60"/>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
+            
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="#FF296BBF" />
 
@@ -33,18 +43,16 @@
                 <Ellipse Height="100" Stroke="Transparent" Width="100" Fill="#FFC6DEEE" Margin="40"  />
                 <TextBox Text="Firstname Lastname" Width="auto" Background="#FF72A2D0" FontFamily="Arial Narrow" FontSize="21" HorizontalAlignment="Center" BorderThickness="0" Padding="20" Foreground="WhiteSmoke" />
                 
-                <Button x:Name="btnMessages" Click="btnMessages_Click" Content="Messages" Margin="0,200,0,0" FontSize="24" FontFamily="Arial Narrow" Background="Transparent" BorderThickness="0" Foreground="WhiteSmoke" Padding="10" />
-                <Button x:Name="btnContacts" Click="btnContacts_Click" Content="Contacts"  FontSize="24" FontFamily="Arial Narrow" Background="Transparent" BorderThickness="0" Foreground="WhiteSmoke" Padding="10" />
-                <Button x:Name="btnCalender" Content="Calender"  FontSize="24" FontFamily="Arial Narrow" Background="Transparent" BorderThickness="0" Foreground="WhiteSmoke" Padding="10" />
-                <Button x:Name="btnTasks" Content="Tasks"     FontSize="24" FontFamily="Arial Narrow" Background="Transparent" BorderThickness="0" Foreground="WhiteSmoke" Padding="10" />
-                <Button x:Name="btnSettings" Content="Settings"  FontSize="24" FontFamily="Arial Narrow" Background="Transparent" BorderThickness="0" Foreground="WhiteSmoke" Padding="10" />
+                <Button x:Name="btnMessages" Click="btnMessages_Click" Content="Messages" Margin="0,200,0,0" FontSize="24" FontFamily="Arial Narrow" Background="Transparent" BorderThickness="0" Foreground="WhiteSmoke" Padding="10" HorizontalContentAlignment="Left"  />
+                <Button x:Name="btnContacts" Click="btnContacts_Click" Content="Contacts"  FontSize="24" FontFamily="Arial Narrow" Background="Transparent" BorderThickness="0" Foreground="WhiteSmoke" Padding="10" HorizontalContentAlignment="Left"  />
+                <Button x:Name="btnCalender" Click="btnCalender_Click" Content="Calender"  FontSize="24" FontFamily="Arial Narrow" Background="Transparent" BorderThickness="0" Foreground="WhiteSmoke" Padding="10" HorizontalContentAlignment="Left"  />
+                <Button x:Name="btnTasks"    Click="btnTasks_Click"    Content="Tasks"     FontSize="24" FontFamily="Arial Narrow" Background="Transparent" BorderThickness="0" Foreground="WhiteSmoke" Padding="10" HorizontalContentAlignment="Left"  />
+                <Button x:Name="btnSettings" Click="btnSettings_Click" Content="Settings"  FontSize="24" FontFamily="Arial Narrow" Background="Transparent" BorderThickness="0" Foreground="WhiteSmoke" Padding="10" HorizontalContentAlignment="Left"  />
             </StackPanel>
         </Grid>
 
-       
-            
         <ContentControl Grid.Column="2" Content="{Binding}"/>
-
+        
 
 
     </Grid>

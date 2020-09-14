@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="InlämningsUppgift2_WPF.Controlls.MessagesControll"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InlämningsUppgift2_WPF.Controlls"
+             mc:Ignorable="d" 
+             d:DesignHeight="65" d:DesignWidth="400">
+    
+    <Button Background="Transparent" BorderThickness="0.5" HorizontalContentAlignment="Left" Padding="0,14" BorderBrush="#FFE0DEDE"   >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="160"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                <TextBox x:Name="messagesName" Text="From Contact Name"  Margin="14,0,0,0" FontFamily="Bahnschrift SemiBold" FontWeight="Bold" Background="Transparent" BorderThickness="0" FontSize="22"/>
+                <TextBox x:Name="messagesDescription" Text="Short description of the message here" Margin="15,0,0,0" FontFamily="Candara Light" Background="Transparent" FontSize="12" Foreground="#FF6E6E6E" BorderThickness="0" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                <TextBox x:Name="messagesDate" FontFamily="Candara Light" FontSize="14" HorizontalAlignment="Right" Background="Transparent" BorderThickness="0"/>
+                <TextBox x:Name="messagesTime" HorizontalAlignment="Right" FontFamily="Candara Light" Background="Transparent" BorderThickness="0" FontSize="14"/>
+            </StackPanel>
+        </Grid>
+    </Button>
+</UserControl>

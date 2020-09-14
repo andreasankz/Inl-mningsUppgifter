@@ -11,9 +11,6 @@ namespace InlämningsUppgift1_WorkerService.Models
 
         
         
-        
-        
-
         private int TempRandom()
         {
             Random tempSlump = new Random();

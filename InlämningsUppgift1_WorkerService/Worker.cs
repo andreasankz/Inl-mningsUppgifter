@@ -55,7 +55,7 @@ namespace InlämningsUppgift1_WorkerService
                 
                 
                 
-                await Task.Delay(2*1000, stoppingToken);
+                await Task.Delay(60*1000, stoppingToken);
             }
         }
 

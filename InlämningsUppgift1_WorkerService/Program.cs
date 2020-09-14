@@ -28,7 +28,7 @@ namespace InlämningsUppgift1_WorkerService
             }
             catch (Exception ex)
             {
-                Log.Fatal(ex, $"Workerservice terminated unexpectedly, {ex}");
+                Log.Fatal(ex, $"Workerservice terminated unexpectedly, {ex.Message}");
                 return;
             }
             finally

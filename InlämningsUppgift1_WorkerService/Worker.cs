@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 using InlämningsUppgift1_WorkerService.Models;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace InlämningsUppgift1_WorkerService
 {
@@ -14,8 +16,8 @@ namespace InlämningsUppgift1_WorkerService
     {
         private readonly ILogger<Worker> _logger;
 
-
-        private TempData _tempData; 
+        private readonly string url = "http://api.openweathermap.org/data/2.5/weather?q=%C3%96rebro&appid=b9f2df37033f5febf912e841800f475a&units=metric&cnt=6";
+        private HttpClient client;
 
         
         
@@ -26,8 +28,8 @@ namespace InlämningsUppgift1_WorkerService
 
         public override Task StartAsync(CancellationToken cancellationToken)
         {
-            _tempData = new TempData();
-            _logger.LogInformation("The service have started!");
+            client = new HttpClient();
+            _logger.LogInformation("The weather service have started!");
 
 
             return base.StartAsync(cancellationToken);
@@ -35,8 +37,8 @@ namespace InlämningsUppgift1_WorkerService
 
         public override Task StopAsync(CancellationToken cancellationToken)
         {
-            
-            _logger.LogInformation("The service have stopped!");
+            client.Dispose();
+            _logger.LogInformation("The weather service have stopped!");
             
             return base.StopAsync(cancellationToken);
         }
@@ -46,13 +48,25 @@ namespace InlämningsUppgift1_WorkerService
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                int rTemperatur = _tempData.Temperatur;
+                try
+                {
+                    var response = await client.GetAsync(url);
 
-                if (rTemperatur >= 25)
-                    _logger.LogInformation($"The temperatur is {rTemperatur} and its to high!");
-                else
-                    _logger.LogInformation($"The temperatur is {rTemperatur} and its normal! ");
-                
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var data = JsonConvert.DeserializeObject<TempData.Root>(await response.Content.ReadAsStringAsync());
+
+                        _logger.LogInformation($"In the city {data.Name.ToLower()} the temperatur is {data.Main.Temp}°C and humidity is {data.Main.Humidity}%");
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogInformation($"The request have failed. { ex.Message }");
+                    
+                }
+
+
                 
                 
                 await Task.Delay(60*1000, stoppingToken);

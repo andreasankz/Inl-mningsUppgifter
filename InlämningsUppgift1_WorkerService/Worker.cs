@@ -16,7 +16,7 @@ namespace InlämningsUppgift1_WorkerService
     {
         private readonly ILogger<Worker> _logger;
 
-        private readonly string url = "http://api.openweathermap.org/data/2.5/weather?q=%C3%96rebro&appid=b9f2df37033f5febf912e841800f475a&units=metric&cnt=6";
+        private readonly string url = "http://api.openweathermap.org/data/2.5/weather?q=%C3%96rebro&";
         private HttpClient client;
 
         

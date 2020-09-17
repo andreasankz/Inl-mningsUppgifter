@@ -13,7 +13,7 @@ namespace InlämningsUppgift1_WorkerService.Models
             public int Humidity { get; set; }
         }
 
-
+        
         public class Root
         {
             public string Name { get; set; }

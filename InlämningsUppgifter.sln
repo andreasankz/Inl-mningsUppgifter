@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InlämningsUppgift1_WorkerService", "InlämningsUppgift1_WorkerService\InlämningsUppgift1_WorkerService.csproj", "{955CC68A-594C-4D03-B14C-50C63C98D443}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InlämningsUppgift2_WPF", "InlämningsUppgift2_WPF\InlämningsUppgift2_WPF.csproj", "{A53AEA43-81D7-4381-96F7-30D4E7FB042B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InlämningsUppgift2_WPF", "InlämningsUppgift2_WPF\InlämningsUppgift2_WPF.csproj", "{A53AEA43-81D7-4381-96F7-30D4E7FB042B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InlämningsUppgift3_Console_Iot", "InlämningsUppgift3_Console_Iot\InlämningsUppgift3_Console_Iot.csproj", "{781D689C-33DA-4D5C-96FA-879F8A7ED38B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A53AEA43-81D7-4381-96F7-30D4E7FB042B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A53AEA43-81D7-4381-96F7-30D4E7FB042B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A53AEA43-81D7-4381-96F7-30D4E7FB042B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{781D689C-33DA-4D5C-96FA-879F8A7ED38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{781D689C-33DA-4D5C-96FA-879F8A7ED38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{781D689C-33DA-4D5C-96FA-879F8A7ED38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{781D689C-33DA-4D5C-96FA-879F8A7ED38B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

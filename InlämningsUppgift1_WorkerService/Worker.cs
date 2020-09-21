@@ -55,9 +55,13 @@ namespace InlämningsUppgift1_WorkerService
 
                     if (response.IsSuccessStatusCode)
                     {
-                        var data = JsonConvert.DeserializeObject<TempData.Root>(await response.Content.ReadAsStringAsync());
+                        var json = JsonConvert.DeserializeObject<TempData.Root>(await response.Content.ReadAsStringAsync());
+                        var data = JsonConvert.SerializeObject(json);
+                        _logger.LogInformation(data);
 
-                        _logger.LogInformation($"In the city {data.Name.ToLower()} the temperatur is {data.Main.Temp}°C and humidity is {data.Main.Humidity}%");
+                        if(json.Main.Temp > 20)
+                            _logger.LogInformation($"Its getting warm! {json.Main.Temp}");
+                        
                     }
                     
                 }
